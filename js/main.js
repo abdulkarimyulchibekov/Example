@@ -37,9 +37,13 @@ const modalgaChiqarator = (el, node) => {
 	const elImg = document.createElement('img');
 	const elDiv = document.createElement('div');
 	const elButton = document.createElement('button');
-	const elTitle = document.createElement('h3');
+	const elTitle = document.createElement('h2');
 	const elType = document.createElement('p');
 	const elYear = document.createElement('p');
+	const elDesc = document.createElement('p');
+	const elDiscount = document.createElement('p');
+	const elRating = document.createElement('p');
+	const elStock = document.createElement('p');
 
 	elTitle.textContent = el.title;
 	elDiv.setAttribute('width', '500');
@@ -48,13 +52,21 @@ const modalgaChiqarator = (el, node) => {
 	elButton.setAttribute('class', 'close-btn');
 	elImg.src = el.thumbnail;
 	elImg.setAttribute('class', 'modal-img');
-	elType.textContent = el.category;
-	elYear.textContent = el.price;
+	elType.textContent = 'Category: ' + el.category;
+	elYear.textContent = 'Price: ' + el.price + '$';
+	elDesc.textContent = el.description;
+	elDiscount.textContent = 'Discount: ' + el.discountPercentage + '%';
+	elRating.textContent = 'Rating: ' + el.rating;
+	elStock.textContent = 'Stock: ' + el.stock;
 
 	node.appendChild(elButton);
 	elDiv.appendChild(elTitle);
 	elDiv.appendChild(elType);
 	elDiv.appendChild(elYear);
+	elDiv.appendChild(elDesc);
+	elDiv.appendChild(elDiscount);
+	elDiv.appendChild(elRating);
+	elDiv.appendChild(elStock);
 	node.appendChild(elDiv);
 	node.appendChild(elImg);
 };
@@ -149,7 +161,8 @@ elNextBtn.addEventListener('click', () => {
 	if (activePage === totalPages) {
 		elNextBtn.setAttribute('disabled', true);
 	} else {
-		++activePage;git 
+		++activePage;
+		git;
 		getMovie();
 	}
 	if (activePage > 1) {

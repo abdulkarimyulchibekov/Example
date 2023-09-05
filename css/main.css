@@ -305,7 +305,7 @@ img {
 .basic-modal {
   width: 800px;
   height: 450px;
-  background-color: lightcoral;
+  background-color: #dfdfdf;
   display: flex;
   align-items: start;
 }
